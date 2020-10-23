@@ -1,0 +1,28 @@
+#registrarCandidato,
+#registrarVoto {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center; 
+}
+#registrarCandidato *,
+#registrarVoto *{
+    margin:5px 32px 5px 32px;
+}
+
+#verCandidatoButton,
+#verVotacionesButton {
+    display: overlay;
+    align-content: right; 
+}
+
+#todos {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
