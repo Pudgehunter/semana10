@@ -104,7 +104,7 @@ votacionesButton = () => {
             }
         )
     });
-}
+} 
 
 verVotacionesButton.addEventListener('click',votacionesButton);
 
