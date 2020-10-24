@@ -48,29 +48,30 @@ registrar = () => {
 registrarButton.addEventListener('click',registrar);
 
 
+var votos = [];
 
 votar = () => {
     let idPres = idPresidente.value;
     
     database.ref('users').on('value',function(data){
+        
+
         data.forEach(
             function(a){
                 let clave = a.key;
                 let nombrePresidente = a.val().nombre;
                 let valor = a.val().idCandidato;
+
                 console.log(clave);
                 console.log(valor);
                 if(idPres == valor){
-                    alert(nombrePresidente+" "+valor + " " + votos[a]);
+                    alert(nombrePresidente+" "+valor);
+                    
                     votos[a] = votos[a] + 1;
                 }
             }
         )
     });
-    
-
-    
-
 }
 
 votarButton.addEventListener('click',votar);
@@ -79,15 +80,13 @@ votarButton.addEventListener('click',votar);
 
 candidatobutton = () => {
     database.ref('users').on('value',function(data){
+        var verCandidatos = [];
         data.forEach(
             function(a){
-                let nombrePresidente = a.val().nombre;
-                let valor = a.val().idCandidato;
-                console.log(valor);
-                alert(nombrePresidente +valor);
+                verCandidatos.push(a.val().nombre+'\n');
+                alert(verCandidatos);
             }
         )
-        noLoop();
     });
 }
 
@@ -95,11 +94,10 @@ verCandidatoButton.addEventListener('click',candidatobutton);
 
 votacionesButton = () => {
     database.ref('users').on('value',function(data){
+        
         data.forEach(
             function(a){
                 let nombrePresidente = a.val().nombre;
-                let valor = a.val().idCandidato;
-                console.log(valor);
                 alert(nombrePresidente + votos[a]);
             }
         )
@@ -108,12 +106,13 @@ votacionesButton = () => {
 
 verVotacionesButton.addEventListener('click',votacionesButton);
 
-let votos = [];
 
 database.ref('users').on('value',function(data){
+        
+
     data.forEach(
         function(a){
             votos[a] = 0;
-        }
+            }
     )
 });

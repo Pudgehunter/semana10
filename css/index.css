@@ -3,9 +3,18 @@
 #votarButton,
 #registrarButton {
     background-color:blue;
-    color: white;
+    color: white;  
 }
-
+#verCandidatoButton {
+    position: relative;
+    left: 400px;
+    top:35px;
+}
+#verVotacionesButton {
+    position: relative;
+    left: 400px;
+    top:35px;
+}
 #registrarCandidato,
 #registrarVoto {
     padding: 20px;
@@ -15,13 +24,11 @@
     justify-content: center;
     align-items: center; 
 }
-
 #verCandidatoButton,
 #verVotacionesButton {
     display: overlay;
     align-content: right; 
 }
-
 #todos {
     padding: 20px;
     display: flex;
